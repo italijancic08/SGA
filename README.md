@@ -72,7 +72,8 @@ Próximamente:
 
 
 
-🚧 En desarrollo.
+- Version:
+Clase 02 - 04/08/2026
 
 
 
