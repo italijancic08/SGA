@@ -24,11 +24,18 @@ setTimeout(() => {
 
 setTimeout(() => {
     console.log("buscando docentes...")
-}, 4000); */
+}, 4000);
 
 console.log("Abriendo SGA")
 setTimeout(() => {
     console.log("Alumnos cargados")
 }, 3000);
 
-console.log("El usuario puede seguir navegando")
+console.log("El usuario puede seguir navegando") */
+
+async function prueba() {
+const respuesta = await fetch("https://jsonplaceholder.typicode.com/users")
+console.log(respuesta)
+}
+
+prueba()
