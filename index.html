@@ -1,12 +1,53 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SGA</title>
-</head>
-<body>
-    <h1>Sistema de Gestion Academica</h1>
-    <p>Proyecto de programacion IV</p>
-</body>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/alumnos.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Sistema de Gestión Académica</h1>
+    </header>
+    <main>
+      <section class="formulario">
+        <h2>Alta de Alumno</h2>
+        <form id="formAlumno">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" /><br /><br />
+
+          <label for="carrera">Carrera</label>
+          <input type="text" id="carrera" /><br /><br />
+
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" /><br /><br />
+
+          <button type="submit">Guardar Alumno</button>
+        </form>
+        <p id="mensaje"></p>
+      </section>
+
+      <section class="alumnos">
+        <h2>Alumnos Registrados</h2>
+        <p id="cantidadalumnos"></p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Carrera</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="listaAlumnos">
+
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
 </html>
