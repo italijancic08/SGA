@@ -11,6 +11,10 @@ function obtenerAlumno(req, res) {
 
 function crearAlumno(req, res) {
   const nuevoAlumno = req.body;
+  const { id, nombre, carrera } = req.body;
+  if (!id || !nombre || !carrera) {
+    return res.status(400).json({ mensaje: "Faltan datos del alumno" });
+  }
   alumnos.push(nuevoAlumno);
   res.json({ mensaje: "alumno creado correctamente" });
 }
