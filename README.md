@@ -34,13 +34,13 @@ Actualmente:
 
 - JavaScript
 
-Próximamente:
-
-- React
-
 - Node.js
 
 - Express
+
+Próximamente:
+
+- React
 
 - MongoDB
 
@@ -75,6 +75,11 @@ backend
 - Persistencia mediante localStorage
 - Organización del código y refactorización
 - Separación inicial entre Frontend y Backend
+- implementacion de validaciones para los datos recibidos mediante req.body
+- Uso de status 400 para datos invalidos
+- Status 404 para alumnos no encontrados
+- Status 201 para registrar nuevo alumno
+- Manejo basico de errores
 
 
 ## Almacenamiento
@@ -85,6 +90,6 @@ backend
 
 ## Autor
 
-Gabriel Oviedo
+Valentino Rivas
 
 Programación IV
