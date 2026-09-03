@@ -15,6 +15,9 @@ function crearAlumno(req, res) {
   if (!id || !nombre || !carrera) {
     return res.status(400).json({ mensaje: "Faltan datos del alumno" });
   }
+  if (typeof id !== "number" || typeof nombre !== "string" || typeof carrera !== "string") {
+    return res.status(400).json({ mensaje: "Datos del alumno inválidos" });
+  }
   alumnos.push(nuevoAlumno);
   res.json({ mensaje: "alumno creado correctamente" });
 }
