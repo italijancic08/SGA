@@ -5,49 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SGA</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/alumnos.js" defer></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
   </head>
 
   <body>
-    <header>
-      <h1>Sistema de Gestión Académica</h1>
-    </header>
-    <main>
-      <section class="formulario">
-        <h2>Alta de Alumno</h2>
-        <form id="formAlumno">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" /><br /><br />
+ <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="alumnos.html">Alumnos</a>
+      <a href="docentes.html">Docentes</a>
+    </nav>
+  </header>
+  <main>
+   <h1>Sistema de Gestión Académica</h1>
+   <p>Bienvenido al Sistema de Gestión Académica (SGA). Este sistema permite la gestión eficiente de información relacionada con alumnos y docentes. A través de esta plataforma, los usuarios pueden registrar, consultar y administrar datos académicos de manera sencilla y organizada.</p>
+   <section>
+    <a href="alumnos.html" class="tarjeta">
+      <i class="fa-solid fa-users"></i>
+      <h2>Alumnos</h2>
+      <p>Gestion de alumnos registrados</p>
+    </a>
 
-          <label for="carrera">Carrera</label>
-          <input type="text" id="carrera" /><br /><br />
-
-          <label for="correo">Correo</label>
-          <input type="texto" id="correo" /><br /><br />
-
-          <button type="submit">Guardar Alumno</button>
-        </form>
-        <p id="mensaje" class="oculto"></p>
-      </section>
-
-      <section class="alumnos">
-        <h2>Alumnos Registrados</h2>
-        <p id="cantidadalumnos"></p>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Carrera</th>
-              <th>Correo</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="listaAlumnos">
-
-          </tbody>
-        </table>
-      </section>
-    </main>
+    <a href="docentes.html" class="tarjeta">
+      <i class="fa-solid fa-chalkboard-user"></i>
+      <h2>Docentes</h2>
+      <p>Gestion de docentes registrados</p>
+    </a>
+    <div class="tarjeta tarjeta-deshabilitada">
+      <i class="fa-solid fa-book"></i>
+      <h2>Materias</h2>
+      <p>Proximamente</p>
+    </div>
+   </section>
+    </ul>
+  </main>  
   </body>
 </html>

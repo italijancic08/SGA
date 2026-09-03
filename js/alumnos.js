@@ -207,7 +207,11 @@ function eliminarAlumno(id){
 listaAlumnos.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-eliminar")){
        const id = Number(e.target.dataset.id)
-       eliminarAlumno(id)
+       const confirmar = confirm("¿Estás seguro de eliminar este alumno?")
+     if (confirmar){  
+        eliminarAlumno(id)
+     }  
+       
     }
 
     if (e.target.classList.contains("btn-editar")){
