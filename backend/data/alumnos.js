@@ -8,6 +8,11 @@ const alumnos = [
         id: 2,
         nombre: "José",
         carrera: "Sistemas"
+    },
+    {
+        id: 3,
+        nombre: "Carlos",
+        carrera: "Base de datos"
     }
 ]
 
