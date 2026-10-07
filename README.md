@@ -83,6 +83,6 @@ backend
 
 ## Autor
 
-Gabriel Oviedo
+Valentino Rivas
 
 Programación IV
