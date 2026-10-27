@@ -9,6 +9,9 @@ import TableCell from "@mui/material/TableCell"
 import TableContainer from "@mui/material/TableContainer"
 import TableHead from "@mui/material/TableHead"
 import TableRow from "@mui/material/TableRow"
+import Box from "@mui/material/Box"
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutlineOutlined"
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined"
 
 const API_ALUMNOS = "/api/alumnos"
 
@@ -63,25 +66,77 @@ export function ListaAlumnos({ actualizar, onAlumnoCreado, onEditarAlumno }) {
         return <Typography>Cargando alumnos...</Typography>
     }
     if (error) {
-        return <Alert severity="error">{error}</Alert>
+        return (
+            <Alert
+                severity="error"
+                variant="filled"
+                icon={<ErrorOutlineIcon />}
+                sx={{ borderRadius: 2, alignItems: "center" }}
+            >
+                {error}
+            </Alert>
+        )
     }
     return (
         <section>
-            <Typography variant="h5" component="h2" gutterBottom>
+            <Typography variant="h5" component="h2" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
                 Alumnos
             </Typography>
             {alumnos.length === 0
-                ? (<Typography color="text.secondary">No hay alumnos registrados.</Typography>)
+                ? (
+                    <Paper
+                        elevation={0}
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: 1,
+                            minHeight: 190,
+                            p: { xs: 3, sm: 4 },
+                            border: 1,
+                            borderColor: "divider",
+                            borderRadius: 3,
+                            bgcolor: "background.paper",
+                            textAlign: "center"
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: "grid",
+                                placeItems: "center",
+                                width: 52,
+                                height: 52,
+                                mb: 0.5,
+                                borderRadius: "50%",
+                                bgcolor: "action.hover",
+                                color: "primary.main"
+                            }}
+                        >
+                            <GroupsOutlinedIcon />
+                        </Box>
+                        <Typography sx={{ fontWeight: 700, color: "text.primary" }}>
+                            No hay alumnos registrados.
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Los alumnos que agregues aparecerán en esta lista.
+                        </Typography>
+                    </Paper>
+                )
                 : (
-                    <TableContainer component={Paper}>
-                        <Table>
+                    <TableContainer
+                        component={Paper}
+                        elevation={0}
+                        sx={{ border: 1, borderColor: "divider", borderRadius: 3, overflowX: "auto" }}
+                    >
+                        <Table sx={{ minWidth: 680 }}>
                             <TableHead>
-                                <TableRow>
-                                    <TableCell>Legajo</TableCell>
-                                    <TableCell>Nombre</TableCell>
-                                    <TableCell>Carrera</TableCell>
-                                    <TableCell>Correo</TableCell>
-                                    <TableCell align="right">Acciones</TableCell>
+                                <TableRow sx={{ bgcolor: "action.hover" }}>
+                                    <TableCell sx={{ fontWeight: 700, whiteSpace: "nowrap" }}>Legajo</TableCell>
+                                    <TableCell sx={{ fontWeight: 700 }}>Nombre</TableCell>
+                                    <TableCell sx={{ fontWeight: 700 }}>Carrera</TableCell>
+                                    <TableCell sx={{ fontWeight: 700 }}>Correo</TableCell>
+                                    <TableCell align="right" sx={{ fontWeight: 700 }}>Acciones</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -92,21 +147,25 @@ export function ListaAlumnos({ actualizar, onAlumnoCreado, onEditarAlumno }) {
                                         <TableCell>{alumno.carrera}</TableCell>
                                         <TableCell>{alumno.correo}</TableCell>
                                         <TableCell align="right">
-                                            <Button
-                                                size="small"
-                                                type="button"
-                                                onClick={() => onEditarAlumno(alumno)}
-                                            >
-                                                Editar
-                                            </Button>
-                                            <Button
-                                                size="small"
-                                                color="error"
-                                                type="button"
-                                                onClick={() => eliminarAlumno(alumno.legajo)}
-                                            >
-                                                Eliminar
-                                            </Button>
+                                            <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 0.5 }}>
+                                                <Button
+                                                    size="small"
+                                                    type="button"
+                                                    onClick={() => onEditarAlumno(alumno)}
+                                                    sx={{ borderRadius: 2 }}
+                                                >
+                                                    Editar
+                                                </Button>
+                                                <Button
+                                                    size="small"
+                                                    color="error"
+                                                    type="button"
+                                                    onClick={() => eliminarAlumno(alumno.legajo)}
+                                                    sx={{ borderRadius: 2 }}
+                                                >
+                                                    Eliminar
+                                                </Button>
+                                            </Box>
                                         </TableCell>
                                     </TableRow>
                                 ))}

@@ -6,9 +6,13 @@ import Footer from "../components/Footer"
 
 export default function LayoutPpal() {
     return (
-        <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", bgcolor: "background.default" }}>
             <Header />
-            <Container maxWidth="md" component="main" sx={{ flex: 1, py: 4 }}>
+            <Container
+                maxWidth="lg"
+                component="main"
+                sx={{ flex: 1, py: { xs: 3, sm: 5 }, px: { xs: 2, sm: 3 } }}
+            >
                 <Outlet />
             </Container>
             <Footer />

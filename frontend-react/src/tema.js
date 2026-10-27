@@ -1,6 +1,16 @@
 import { createTheme } from "@mui/material/styles"
 
 const tema = createTheme({
+    shape: {
+        borderRadius: 12
+    },
+    typography: {
+        fontFamily: '"Inter", "Segoe UI", Roboto, Arial, sans-serif',
+        button: {
+            fontWeight: 600,
+            textTransform: "none"
+        }
+    },
     colorSchemes: {
         light: {
             palette: {
