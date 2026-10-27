@@ -4,7 +4,7 @@ function Footer() {
         <footer>  
             <h2>SGA</h2>
             <p>© 2026 Todos los derechos reservados</p>  
-            <p>Gabriel Oviedo - Programación IV </p>
+            <p>Valentino Rivas - Programación IV </p>
       </footer>
     )
 }

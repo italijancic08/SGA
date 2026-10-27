@@ -8,7 +8,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Gabriel Oviedo",
+  "author": "Valentino Rivas",
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
